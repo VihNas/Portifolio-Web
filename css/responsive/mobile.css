@@ -1,0 +1,63 @@
+/*
+ * mobile.css
+ * Regras de responsividade para telas de até 680px e prefers-reduced-motion.
+ * Fonte: styles.css — linhas 443–501
+ */
+
+@media (max-width: 680px) {
+  html { scroll-padding-top: 72px; }
+  .container { width: min(calc(100% - 28px), var(--max)); }
+  h2 { font-size: 30px; }
+  .about-copy h2 { font-size: 32px; }
+
+  .header-inner { height: 70px; }
+  .menu-toggle { display: flex; }
+  .main-nav {
+    position: absolute; top: 74px; left: 14px; right: 14px; z-index: 60;
+    display: none; flex-direction: column; align-items: stretch; gap: 0;
+    background: #100e12; border: 1px solid var(--line); border-radius: 16px; padding: 10px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .55);
+  }
+  .main-nav.open { display: flex; animation: drop .25s var(--ease); }
+  @keyframes drop { from { opacity: 0; transform: translateY(-8px); } }
+  .nav-link { padding: 13px 14px; border-radius: 10px; }
+  .nav-link::after { display: none; }
+  .nav-link.active { background: rgba(237, 114, 189, .08); color: var(--pink-soft); }
+  .nav-cta { text-align: center; margin: 8px 0 2px; padding: 12px; }
+
+  .section { padding: 72px 0; }
+  .hero { min-height: auto; padding: 120px 0 64px; }
+  .hero-actions .button { flex: 1 1 100%; }
+  .hero-text { font-size: 15px; }
+
+  .section-heading { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 28px; }
+  .skill-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .skill-card { height: 86px; }
+  .skill-card i { font-size: 30px; }
+
+  .project-grid { grid-template-columns: 1fr; }
+  .project-grid .project-card:last-child { grid-column: auto; }
+  .project-preview { height: 190px; }
+  .project-body p { min-height: 0; }
+
+  .traits { flex-direction: column; gap: 16px; }
+  .service-grid { grid-template-columns: 1fr; }
+  .service-card { min-height: auto; }
+
+  .contact-card { padding: 28px 24px; gap: 28px; }
+  .contact-card h2 { font-size: 26px; }
+  .contact-pill { width: 100%; }
+
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .socials { width: 100%; justify-content: space-between; }
+}
+
+/* ================================
+   REDUCED MOTION
+   ================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+

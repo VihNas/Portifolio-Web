@@ -1,0 +1,23 @@
+/*
+ * footer.css
+ * Seção Footer: .site-footer, .footer-inner, .footer-brand, .sep, .socials, .made
+ * Fonte: styles.css — linhas 382–397
+ */
+
+.site-footer { padding: 0 0 32px; }
+.footer-inner {
+  border-top: 1px solid rgba(255, 255, 255, .07); padding-top: 26px;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  color: #78727c; font-size: 12px;
+}
+.footer-brand { display: flex; gap: 12px; align-items: center; }
+.footer-brand .brand { font-size: 13px; }
+.sep { color: #3a353d; }
+.socials { display: flex; align-items: center; gap: 18px; }
+.socials a {
+  font-size: 18px; line-height: 1; display: inline-flex; align-items: center; justify-content: center;
+  transition: color .2s, transform .2s var(--ease);
+}
+.socials a:hover { color: var(--pink); transform: translateY(-2px); }
+.made b { color: var(--pink); font-weight: 400; }
+

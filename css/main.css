@@ -1,0 +1,41 @@
+/*
+ * main.css
+ * Ponto de entrada CSS — apenas @import na ordem correta de cascata.
+ * NÃO adicione regras aqui; use os arquivos específicos.
+ *
+ * Ordem:
+ *   1. base/variables  — tokens :root
+ *   2. base/reset      — normalização e utilitários globais
+ *   3. base/typography — tipografia geral
+ *   4. components/*    — peças reutilizáveis (botões, header, cards, toast)
+ *   5. sections/*      — layouts específicos de cada seção
+ *   6. responsive/*    — breakpoints (tablet → mobile → reduced-motion)
+ */
+
+/* 1. Base */
+@import "./base/variables.css";
+@import "./base/reset.css";
+@import "./base/typography.css";
+
+/* 2. Components */
+@import "./components/buttons.css";
+@import "./components/header.css";
+@import "./components/cards.css";
+@import "./components/toast.css";
+
+/* 3. Sections */
+@import "./sections/hero.css";
+@import "./sections/skills.css";
+@import "./sections/projects.css";
+@import "./sections/about.css";
+@import "./sections/services.css";
+@import "./sections/contact.css";
+@import "./sections/footer.css";
+
+/* 4. Reveal (animações de entrada — depende das sections) */
+@import "./sections/reveal.css";
+
+/* 5. Responsive */
+@import "./responsive/tablet.css";
+@import "./responsive/mobile.css";
+

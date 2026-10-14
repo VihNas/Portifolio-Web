@@ -1,0 +1,24 @@
+/*
+ * typography.css
+ * Eyebrow, h1, h2, h3, textos gerais (eyebrow, micro-copy, section-heading).
+ * Fonte: styles.css — linhas 77–88 e 225–227
+ */
+
+.eyebrow {
+  color: var(--pink-soft); font-size: 14px; margin-bottom: 8px; letter-spacing: .01em;
+}
+.eyebrow span { font-size: 16px; margin-right: 6px; }
+
+h1, h2 {
+  font-family: var(--serif); font-weight: 500;
+  letter-spacing: -.045em; line-height: 1.04;
+}
+h1 em, h2 em { color: var(--pink); font-style: italic; }
+h2 { font-size: 34px; }
+h3 { font-size: 16px; font-weight: 600; }
+
+/* Cabeçalhos de seção (compartilhado entre skills, projects e services) */
+.section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 36px; }
+.micro-copy { font-size: 13px; color: #bbb5bd; }
+.micro-copy span { color: var(--pink); }
+

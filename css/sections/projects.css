@@ -1,0 +1,9 @@
+/*
+ * projects.css
+ * Seção Projects: .projects, .project-grid
+ * Nota: .project-card e anatomia interna estão em components/cards.css
+ * Fonte: styles.css — linhas 259
+ */
+
+.project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+

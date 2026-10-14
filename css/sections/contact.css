@@ -1,0 +1,13 @@
+/*
+ * contact.css
+ * Seção Contact: .contact, .script-note.small (variante do contact card)
+ * Nota: .contact-card e .contact-pill estão em components/cards.css
+ * Fonte: styles.css — linhas 355, 376–377
+ */
+
+.contact { padding: 56px 0 90px; }
+
+/* Variante do script-note específica do contact card */
+.script-note.small { position: absolute; right: 36px; bottom: 26px; top: auto; font-size: 24px; }
+.script-note.small em { font-family: var(--script); font-style: normal; color: var(--pink); }
+

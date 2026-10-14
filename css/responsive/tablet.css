@@ -1,0 +1,23 @@
+/*
+ * tablet.css
+ * Regras de responsividade para telas de até 1024px e até 900px.
+ * Fonte: styles.css — linhas 423–441
+ */
+
+@media (max-width: 1024px) {
+  .skill-grid { grid-template-columns: repeat(4, 1fr); }
+  .service-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .container { width: min(calc(100% - 40px), var(--max)); }
+  .hero-grid { grid-template-columns: 1fr; text-align: left; }
+  .spark-3 { display: none; }
+  .project-grid { grid-template-columns: 1fr 1fr; }
+  .project-grid .project-card:last-child { grid-column: span 2; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  
+  .contact-card { grid-template-columns: 1fr; }
+  .script-note.small { display: none; }
+}
+

@@ -1,0 +1,46 @@
+/*
+ * header.css
+ * .site-header, .brand, .main-nav, .nav-link, .nav-cta, .menu-toggle
+ * Fonte: styles.css — linhas 93–131
+ */
+
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: rgba(8, 7, 10, .72);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s, background .3s;
+}
+.site-header.scrolled { border-color: rgba(237, 114, 189, .14); background: rgba(8, 7, 10, .88); }
+
+.header-inner { height: 80px; display: flex; align-items: center; justify-content: space-between; }
+
+.brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-weight: 700; font-size: 18px; color: var(--pink-soft); letter-spacing: -.04em;
+}
+
+.main-nav { display: flex; align-items: center; gap: 34px; font-size: 14px; color: #c5bec8; }
+.nav-link { position: relative; padding: 8px 0; transition: color .2s; }
+.nav-link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: var(--pink); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease);
+}
+.nav-link:hover, .nav-link.active { color: var(--white); }
+.nav-link.active::after, .nav-link:hover::after { transform: scaleX(1); }
+
+.nav-cta {
+  border: 1px solid var(--pink); border-radius: 999px; padding: 9px 18px; color: var(--white);
+  transition: background .25s, color .25s, box-shadow .25s;
+}
+.nav-cta:hover { background: var(--pink); color: #160d14; box-shadow: 0 0 24px rgba(237, 114, 189, .25); }
+
+.menu-toggle {
+  display: none; background: none; border: 0; padding: 10px; cursor: pointer;
+  flex-direction: column; gap: 5px;
+}
+.menu-toggle span { display: block; width: 22px; height: 1.5px; background: var(--white); transition: transform .3s var(--ease), opacity .2s; }
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(3.25px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { transform: translateY(-3.25px) rotate(-45deg); }
+

@@ -1,0 +1,23 @@
+/*
+ * about.css
+ * Seção About: .about, .about-grid, .butterfly-art, .butterfly-svg (SVG inline),
+ *              animações flap (asas) e bob (flutuação), .about-copy, .traits, .trait-icon
+ *
+ * REMOVIDO: .butterfly (texto 𖦹), .art-orbit, .sp/.sp-a/.sp-b/.sp-c
+ *           (substituídos pelo SVG inline da borboleta animada)
+ *
+ * REDUCED MOTION: regra única em responsive/mobile.css desliga todas as animações.
+ */
+
+.about { padding: 80px 0 100px; }
+.about-grid { display: grid; grid-template-columns: 1fr; align-items: center; gap: 72px; }
+
+
+
+/* ---- Texto da seção ---- */
+.about-copy > p:not(.eyebrow) { max-width: 700px; color: #b8b2bb; font-size: 15px; }
+.about-copy h2 { font-size: 38px; margin-bottom: 18px; }
+.traits { display: flex; gap: 34px; margin: 28px 0 30px; }
+.traits li { display: flex; gap: 10px; align-items: center; color: #b9b3bb; font-size: 13px; line-height: 1.35; }
+.trait-icon { font-size: 24px; color: var(--pink); }
+.traits strong { color: #ddd7de; font-weight: 500; }

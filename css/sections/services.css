@@ -1,0 +1,10 @@
+/*
+ * services.css
+ * Seção Services: .services, .service-grid
+ * Nota: .service-card e seus estados estão em components/cards.css
+ * Fonte: styles.css — linhas 336–337
+ */
+
+.services { border-top: 1px solid var(--line-soft); background: #0a090c; }
+.service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+

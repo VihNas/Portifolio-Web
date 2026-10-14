@@ -1,0 +1,79 @@
+/*
+ * hero.css
+ * Seção Hero: layout, título, anéis (SVG em duas camadas), foto, sparks e frase em script.
+ */
+
+.hero {
+  position: relative; min-height: 100vh; min-height: 100svh;
+  padding: 150px 0 80px; overflow: hidden;
+  display: flex; align-items: center;
+}
+.hero-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .35; }
+.blob-a { width: 520px; height: 520px; right: -120px; top: 60px; background: radial-gradient(circle, #ed72bd, transparent 65%); }
+.blob-b { width: 420px; height: 420px; left: -160px; bottom: -120px; background: radial-gradient(circle, #6b2a5e, transparent 65%); }
+
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
+
+.hero-copy { position: relative; z-index: 4; }
+.hero h1 { font-size: clamp(40px, 4.4vw, 60px); max-width: 640px; }
+.hero-text { max-width: 540px; color: #c3bdc5; font-size: 16px; margin: 24px 0 30px; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* ---------- Arte do hero ---------- */
+.hero-art {
+  position: relative; height: 640px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Anéis em SVG: o de trás fica atrás da foto, o da frente fica na frente */
+.hero-orbit {
+  position: absolute; left: 0; top: 50%;
+  width: 100%; height: auto;
+  transform: translateY(-50%);
+  overflow: visible; pointer-events: none;
+}
+.hero-orbit ellipse,
+.hero-orbit path {
+  fill: none;
+  stroke: rgba(246, 168, 215, .8);
+  stroke-width: 1.4;
+  filter: drop-shadow(0 0 5px rgba(237, 114, 189, .55));
+}
+.hero-orbit-back  { z-index: 1; }
+.hero-orbit-front { z-index: 3; }
+
+/* Foto sem moldura: as bordas e a parte de baixo se dissolvem no fundo */
+.hero-portrait {
+  position: relative; z-index: 2;
+  width: 500px; height: 600px;
+}
+.hero-photo {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 18%;
+  -webkit-mask-image: radial-gradient(ellipse 50% 52% at 50% 46%, #000 60%, transparent 100%);
+          mask-image: radial-gradient(ellipse 50% 52% at 50% 46%, #000 60%, transparent 100%);
+}
+
+/* Detalhes */
+.spark {
+  position: absolute; z-index: 4;
+  color: var(--pink-soft); font-size: 18px;
+  animation: twinkle 3.5s ease-in-out infinite;
+}
+.spark-1 { right: 12%; top: 50px; }
+.spark-2 { right: 6%; top: 190px; font-size: 14px; animation-delay: 1s; }
+.spark-3 { left: 8%; bottom: 120px; font-size: 13px; animation-delay: 2s; }
+@keyframes twinkle { 50% { opacity: .35; transform: scale(.8); } }
+
+.script-note {
+  position: absolute; z-index: 5; right: 0; bottom: 70px;
+  font-family: var(--script); font-size: 28px; line-height: 1.05;
+  color: var(--pink); transform: rotate(-8deg); pointer-events: none;
+}
+
+/* ---------- Responsivo (complementa tablet.css) ---------- */
+@media (max-width: 900px) {
+  .hero-art { height: 480px; order: -1; }
+  .hero-portrait { width: 320px; height: 400px; }
+}
